@@ -1,4 +1,4 @@
-# skrypty
+# tidal skriprts
 music/useful things written in/for for tidal cycles
 
 also, I produce things as nadziej,, here's my:
