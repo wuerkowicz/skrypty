@@ -1,0 +1,31 @@
+d1
+$ sometimesBy 0.2 (juxBy 0.3 (rev . hurry "<1.75 -1.5 -0.5>"))
+$ hurry 0.5
+$ chunk 4 (|+ room 0.2)
+$ sometimesBy 0.2 (iter 4)
+$ splice 4 "0 <0 2> 0 <4 1>"
+$ s "beatfox"
+# shape 0.2
+# size 0.6
+
+d2
+$ iter "<4 2 8 4>"
+$ stut 2 0.125 "-0.5"
+$ striate 8
+$ loopAt 0.5
+$ s "bxbs:4"
+# speed 1
+# legato 2
+# gain 0.8
+# lpf (range 200 2200 $ slow 1.5 $ square)
+# lpq (range 0.4 0.05 $ fast 1.5 $ saw)
+
+
+d3
+$ sometimesBy 0.2 (off "<0.5 0.25 -0.5>" (rev . hurry "<2 -2 -0.5>"))
+$ loopAt 0.5
+$ s "<tbdo tbdkln:1>(5,8)"
+# speed 0.5
+# shape 0.3
+# legato 1.5
+

@@ -1,0 +1,43 @@
+
+let pat = binary 222
+
+d1
+$ slow 2
+$ sometimes (striate 2)
+$ plyWith 4 (iter 4)
+$ rarely (# s "mcym")
+$ struct (binary "102")
+$ s "bxmel"
+# n "[0 1 0 0]"
+|+ n 1
+|+ note "[0, 10, <16 15>/8]"
+# speed 0.125
+# gain 0.8
+# pan (slow 1.75 $ saw)
+# cut 4
+
+d2
+$ slow 2
+$ plyWith 3 (|+ n "<2 4 6 8>")
+$ sometimes (striate "<[2 4 6 8]>")
+$ sometimes (iter 4)
+$ struct (binary "101")
+$ stack [ "[bxper, bxmel:4]"
+# speed 2
+# hpf 900
+# pan (slow 1.5 $ tri)
+# legato 1
+# gain 0.7,
+rarely (# s "tbshard:1")
+$ s "msnare:7"
+# crush 6
+# shape 0.8
+# gain 0.8
+|+ note 0
+] # sustain 0.5
+
+d4
+$ rarely (# s "tcp:2")
+$ struct pat
+$ s "noco*4"
+# pan (slow 1.5 $ saw)

@@ -1,0 +1,50 @@
+
+d1
+$ every 8 (hurry 2)
+$ iter 2
+$ off 0.25 ((sometimesBy 0.2 rev) . (# s "<[tperc:4 <tcp:5 tcp:3>] tbdkln:2>") . (# speed 1) . (chop "<16 8 2>"))
+$ s "tbdo(3,8)"
+|* speed 0.25
+# shape 0.2
+
+d2
+$ sometimesBy 0.2 (iter 2)
+$ juxBy 0.125 ((chop 4) . (# gain 1 ). (stut 2 0.5 (-0.125/2)) . (|+ size 0.5)) 
+$ stack [
+     "synth:5"
+    # cut 1
+    # shape 0.4,
+    sometimesBy 0.05 (hurry 2)
+    $ "tine:10"
+] # gain 0.9
+
+
+
+d3 
+$ every 2 (slow 2)
+$ plyWith 2 (|* speed "<1.5 <1.5 0.5>>")
+$ chop "<12 6 18 4 16>"
+$ s "<tcym:3 <tstab:2 tsnshrt tsnshrt:1>>"
+# pan (fast 1.75 $ sine)
+# gain 0.8
+# size 0.7
+# room (fast 2 $ 0.6 * sine)
+# crush 5
+
+d4
+$ sometimesBy 0.1 (hurry "<1.5 <2 -3 1.5 0.5>>")
+$ iter 4
+$ sometimesBy 0.05 (# s "tcp:2")
+$ s "tom(<[3..8]/4>,8)"
+|* speed 2
+# shape (range 0.0 0.4 $ slow 3 $ tri)
+
+d5
+$ fast 4
+$ s "tvocal:11 ~ <~ synth:28> "
+# crush 4
+# gain 0.9
+# sustain (range 1 0.2 $ slow 16 $ saw)
+|- note "[0 1]/16"
+# lpf (slow 8 $ sine*6000+200)
+# lpq 0.3

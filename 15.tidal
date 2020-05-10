@@ -1,0 +1,50 @@
+-- $ degradeBy
+-- {}
+-- # squiz
+-- slice
+-- splice
+-- bite
+-- chew
+-- chunk
+-- accelerate
+-- perlin
+
+d1
+$ sometimesBy 0.3 ( (hurry (choose [1.5, -1.5, -0.5, 0.5, 0.75])))
+$ striate "<1 2 4>/16"
+$ stack [
+    plyWith 3 (|+ note "7 [11 8]")
+    $ iter 2
+    $ chop 6
+    $ s "lang:4 !"
+    # gain 1.4
+    # speed "<1!3 0.5>/16",
+     s "{tbdo(3,8,<0 2 4 6>), ~ tbshard:1/2}"
+     |- note "6"
+     # shape 0.7
+    ]
+# legato 1
+# squiz "<0 [0 2]>"
+
+d2
+$ juxBy 0.2 (rev)
+$ chunk 4 (off 0.25 (hurry "<2 -2 -0.75 0.5>"))
+$ sometimesBy 0.4 (stut 3 0.125 "-0.25")
+$ every 4 (degradeBy 0.2)
+$ s "{[tsnshrt:17|tnshrt:15](<1 3>/32,8,<0 2>/8), kickblast:8 stat tperc:4}"
+# note "<0 <0 4>>"
+# squiz "<1 [0 1]>"
+# vowel "<e u>/16"
+# hpf 400
+# hpq 0.1
+
+d1
+$ stut' 3 (1/12) (|+ note "<5 7>")
+$ s "stat:1"
+# legato 1
+
+d1
+$ plyWith 8 (# gain 0.8) $
+striate' "[256 128]*4" (1/100)
+$ s "langloop:21"
+# legato 3

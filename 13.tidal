@@ -1,0 +1,42 @@
+d1
+$ striate 8
+$ weaveWith 4 (s "<lang:21>")
+[
+(# lpf (slow 12 $ sine*4000+500)),
+off 0.25 (hurry "<0.5>"),
+chop 64,
+juxBy 0.15 (stut' "<4 5>/4" 0.125 (|* speed "<1.25>/3"))]
+|- note "<0>/4"
+# begin 0.3
+# legato 1
+# shape 0.3
+
+d2
+$ juxBy 0.75 (iter 4)
+$ off "<0.5 <0.25 0.75>>" ((hurry 4). (loopAt "<2 4>"). (|+ hpf 200) . (|+ hpq 0.1))
+$ s "lang:14(<5..8>,16,<0 2 4 6>)"
+# speed "8"
+# orbit 5
+# cut "-1"
+# crush 7
+# hpf 1200
+# orbit 0
+# gain 0.8
+
+
+d3
+$ brak
+$ every 8 (iter 2)
+$ plyWith 2 (|+ n 1)
+$ chop 16
+$ loopAt 16
+$ s "jung:2"
+# speed "1"
+# legato 2
+# hpf 150
+# crush 7
+
+d4
+$ loopAt 16
+$ s "jung:2 supero"
+

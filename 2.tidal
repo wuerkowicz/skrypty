@@ -1,0 +1,70 @@
+let mel = "0 0 3 <3 <5 6>>"
+
+let dbl x = x*2
+
+
+d1
+
+interpolate 1
+$ every 8 (iter 2)
+$ every 16 (iter 4)
+$ stut' "<3 <4 6>>" (1/8) (|* note "<3 <3 2 3 4>>")
+$ striate 4
+$ note mel
+# s "tstab:2"
+# speed 0.125
+# hpf (slow 4 $ segment 16 $ range 300 1000 $ tri)
+# hpq 0.2
+# sustain 1
+# crush 6
+# gain 0.8
+
+d2
+$ every 4 (iter 2)
+$ fast 2
+$ s "[[~ bxhit:2?](5,8) bxhit:1?(<[1..9]>,16)]/4"
+# speed 2
+# shape 0.5
+# hpf 300
+# gain 0.7
+
+d3
+$ segment 4
+$ every 8 (stut' 2 (1/8) (|* speed 0.5))
+$ every 4 (striate 2)
+$ foldEvery [3,4] (striate (dbl "<2..8>/4"))
+$ s "[~ bxmel]/2"
+# speed 1
+|- note 1
+# gain 0.6
+
+
+d4
+$ foldEvery [2,5] (|+ room 0.3)
+$ n (segment 16 $ range 0 24 $ sine)
+# s "<noco<noco <dr mhihat>>>"
+# shape 0.3
+# speed 2
+|+ note 1
+# crush 7
+# hpf (segment 16 $ range 50 400 $ tri)
+# cut "-1"
+# sustain 1
+
+
+d5
+$ foldEvery [2,8] (|* speed "<1.5 0.5 0.75 -2>")
+$ foldEvery [3,4] (slow 2)
+$ n (segment 16 $ range (dbl "<[8 .. 1]>/8") 32 $ tri)
+# s "<kickblast>/4"
+|+ n 5
+# cut "-1"
+# speed 0.5
+# shape (segment 12 $ range 0.9 0.4 $ saw)
+
+d6
+$ s "~ bxperc ~ <bxmisc:6 bxhit:2>"
+# speed 1
+# shape (segment 12 $ range 0.4 0.6 $ saw)
+# gain 0.6
+# hpf 200

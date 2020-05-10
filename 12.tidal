@@ -1,0 +1,52 @@
+d1
+$ weave 8 ((room saw*0.5))
+[
+ plyWith 4 ((|* legato 0.9) . (|* hpf 20))
+$ loopAt 4
+$ chop "<<-32 32> 16>"
+$ s "langloop:3"
+# legato 2
+# speed 1
+# loop 1.5,
+ plyWith 3 (|* speed 0.9)
+$ loopAt 4
+$ chop "<8 16 12 6>"
+$ s "lang:5"
+# legato 1
+# speed 4
+# loop sine*1.75
+]
+
+
+d2
+$ weaveWith 4 (s "<lang:21 lang:17>")
+[
+(# lpf (slow 12 $ sine*4000+500)),
+juxBy 0.25 (rev),
+off 0.25 (hurry "<0.5 2>"),
+chop 64,
+juxBy 0.15 (stut' "<4 5>/4" 0.125 (|* speed "<1.25>/3"))]
+|- note "<0 2>/4"
+# legato 1
+# crush 5
+
+d3
+$ s "<~ lang:21> ~ ~ "
+# crush 9
+|+  note "<5 <1 3>>/4"
+# gain 0.7
+# speed 4
+# cut "4"
+
+
+
+d3
+$ juxBy 0.75 (iter 4)
+$ off "<0.5 <0.25 0.75>>" ((hurry 4). (loopAt "<2 4>"). (|+ hpf 200) . (|+ hpq 0.1))
+$ s "lang:14(<5..8>,16,<0 2 4 6>)"
+# speed "8"
+# orbit 5
+# cut "-1"
+# hpf 1200
+# orbit 0
+# gain 0.8

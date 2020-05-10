@@ -1,0 +1,43 @@
+setcps 0.75
+
+d1
+$ off "<-0.5 1.5>" (hurry 2)
+$ juxBy 0.6 rev
+$ chunk 6 (# squiz 2)
+$ sometimesBy 0.2 (juxBy 0.5 (off 0.25 (hurry "< 1.75 2.5 -0.5 -2>")))
+$ every 4 (|+ n "<1 2>")
+$ s "{tcp:5 <<tcp:2 tsn:4> thihat:12 tcymbal:14>}%2"
+# shape 0.2
+|+ note 3
+# gain 0.8
+# speed "<0.5 1>"
+# hpf 200
+# hpq 0.1
+# legato 0.5
+
+
+
+d2
+$ sometimesBy 0.1 ((striate 2 . slow "<2 1>"))
+$ sometimesBy 0.1 (|- n 1)
+$ snowball 4 (+) (chop "<2 <2 4> <4 8 2>>")
+$ chunk 2 (|+ room 0.1)
+$ stack [
+    "bxbs:3(3,8)"
+    # size 0.7
+]
+|+ note "<0 -3 4>/4"
+# lpf "100"
+# lpq 0.1
+# legato 1.1
+
+
+d3
+$ superimpose (hurry "<0.5!3 <2 1.75 -1.5>>")
+$ every 4 (chop "<2 8 4>")
+$ loopAt 1
+$ s "microbrk:4"
+# gain 0.9
+# shape 0.4
+# cps 1.5
+# legato 1

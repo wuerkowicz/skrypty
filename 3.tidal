@@ -1,0 +1,70 @@
+
+let dbl x = x*2
+
+d1
+$ foldEvery [2,8] (|* speed "<0.5 -2>")
+$ foldEvery [3,5] (slow 2)
+$ n (segment 16 $ range (dbl "<[8 .. 1]>/8") 8 $ tri)
+# stack[
+"<mclap mhihat mclap msnare>/16"
+# speed 1
+|+ note 6,
+s "mstomp"
+ # speed 2
+ # sustain (slow 16 $ range 0 0.5 $ sine)
+]
+# cut "-1"
+# shape (segment 12 $ range 0.7 0.5 $ saw)
+|+ sustain 0.5
+# hpf (segment 16 $ range 100 4000 $ saw)
+# hpq 0.2
+
+interpolateIn 16
+
+d2
+$ every 4 (iter 4)
+$ every 2 (# gain 0)
+$ striate 4
+$ stut' 2 (1/8) (|* speed 4)
+$ every 8 (iter 8)
+$ n (slow 2 $ segment 16 $ range 8 32 $ tri)
+# s "tstab"
+|- note 6
+# hpf 150
+# speed 0.5
+# sustain 2
+
+d3
+$ segment 4
+$ every 4 (striate 2)
+$ foldEvery [1,8] (stut' 2 (1/16) (|- note "<0 -3>/16"))
+$ foldEvery [3,4] (striate (dbl "<2..8>/4"))
+$ s "[~ bxmel]/2"
+# speed 1
+# delay 0.9
+# delaytime 0.6
+|- note 1
+# gain 0.6
+
+
+d4
+$ n (slow 2 $ segment 16 $ range 5 32 $ sine)
+# s "<rim<noco <bxperc mhihat>>>"
+# shape 0.5
+# speed 1
+|+ note 1
+# crush 7
+# lpf (segment 16 $ range 100 4000 $ tri)
+# lpq 0.2
+# cut "-1"
+# sustain 0.5
+
+
+
+d6
+$ s "~ bxperc ~ <bxmisc:6 bxhit:2>"
+# speed 1
+# shape (segment 12 $ range 0.4 0.6 $ saw)
+# gain 0.6
+# hpf 200
+# room 0.4

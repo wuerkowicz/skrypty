@@ -1,0 +1,42 @@
+d1
+$ whenmod 4 2 (juxBy 0.3 (hurry "<0.5 -0.5>"))
+$ snowball 6 (*) (hurry 1.5)
+$ s "torchestral(3,8)"
+# legato 4
+# speed 1.5
+
+
+d2
+$ silence
+
+$ sometimesBy 0.1 (chop "<-4 2 8>")
+$ chunk 16 (off (1/6) (hurry "<1.5 -0.75 2 -1.5>/6"))
+$ whenmod 12 2 (off 0.25 (chop "<4 -2 6>/8"))
+$ juxBy 0.6 (rev)
+$ off 0.5 (hurry 2)
+$ s "{<tcym:4 thihat>!8, ~ ~ tcp:4 ~}%8"
+# legato 1
+# hpf 200
+
+
+d3
+$ silence
+
+-- $ off 0.125 ((hurry 1.75) . (|+ hpf 200) . (juxBy 0.3 (rev)))
+$ sometimesBy 0.15 (chop "<-4 2 4 8>")
+$ chunk 12 (off (1/6) (hurry "<1.5 -0.75 2 -1.5>/6"))
+$ degradeBy 0.1
+$ stack [
+"{stat(3,8,<4 0>)@4}%1"
+|+ note "<3!3 2>"
+# legato 0.05
+# speed 2
+|+ note 0
+, juxBy 0.05 ((off (1/8) (hurry "<-0.75 1.5 3>")) . rev)
+"{eoe:2(3,8)@2, eoe:104(5,8)@6}%2"
+# gain 0.7
+# speed 2
+|- note 3
+# legato 1
+]
+# shape 0.5

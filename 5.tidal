@@ -1,0 +1,80 @@
+d1
+$ sometimes (# gain 0)
+$ plyWith 3 ((|+ n 1) . (|* speed 0.5))
+$ slow 2
+$ sometimes ((|+ pan "<0.4 -0.4>") . (rev))
+$ struct pat
+$ s "bxmel"
+# n "[0 1 0 0]"
+|+ n 1
+|+ note "[0, 9, <16>/8]"
+|- note 1
+# speed 0.75
+# gain 0.8
+# pan (slow 0.75 $ saw)
+# sustain 1
+# cut 0
+# hpf 500
+
+d2
+$ plyWith 2 ((|+ room 0.1) . (|* speed 1.75))
+$ rarely (|* speed "<2 -2 -1 0.5>/8")
+-- $ sometimes (striate "<[2 4 6 8]>")
+$ sometimes (iter 4)
+$ struct (pat)
+$ striate 4
+$ s "synth:28"
+|+ note "[<2@3 [4 5]>, -3]"
+|+ note "[0]"
+|- note 2
+# sustain 0.2
+# speed 1
+# lpf (slow 12 $ range 400 4000 $ tri)
+
+
+d3
+$ slow 2
+$ rarely (|* speed "<2 -2 -1.5>/12")
+$ plyWith 4 ((|+ n (slow 1.5 $ range 1 16 $ saw)) . (|* speed "<2 1.5>"))
+$ stack [
+s "{dr3:3@3 dr2:4@2 meoe:2@3}%4",
+ "mstomp(3,8)"
+ # sustain (slow 7 $ range (-2.5) (-1) $ saw)
+# lpf (slow 12 $ range 400 10000 $ saw)
+# lpq 0.2
+# hpf 100
+]
+|+ n "<[0 .. 4]/6>"
+|+ n "<[0 .. 2]>/16"
+# speed 1
+|+ sustain 2
+# shape 0.8
+# crush (slow (1/12) $ range 9 6 $ square)
+# legato 1
+
+d4
+$ slow 4
+-- $ striate' 2 (range 0.035 1.5 $ slow 12 $ tri)
+$ sometimesBy 0.3 ((rev))
+$ plyWith "2" (iter "<4 16 2 8>" . (|* speed "<0.75<0.5 -0.75>>"))
+$ rarely (|* speed "<2 -2 -1.5>/16")
+$ plyWith "<2@3 <3 6 8 1.5>>" (|+ n 1)
+$ rarely (# s "[tcp:2, thihat]")
+$ struct pat
+$ s "[tim, <noco:6 tsn:1>]"
+# pan (range 0.3 0.6 $ slow 1.5 $ saw)
+# cut "-1"
+|+ note "{24@5 12@2}%8"
+# shape 0.4
+ # sustain (slow 7 $ range (0.05) (1.5) $ saw)
+# legato 1
+
+
+d5
+$ slow 4
+$ stut' "<[3 .. 5]>" (1/6) (|+ note "<[9 .. 1]>/32")
+$ striate 2
+$ foldEvery [3,5] (|* legato 0.9)
+$ struct (inv pat)
+$ s "midi1"
+|- note 8

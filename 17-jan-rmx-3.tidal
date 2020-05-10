@@ -1,0 +1,60 @@
+
+d1
+$ whenmod 8 2 (chop "<1 2 4 6 8>")
+$ sometimesBy 0.1 (superimpose (hurry "<2 0.5 -2>"))
+$ slice 16 ("<11!7 12>")
+$ s "yan:17"
+# speed 0.125
+# legato 1
+# lpf (range 400 2000 $ slow 6 $ tri )
+# lpq 0.1
+# cut 2
+# gain 0.9
+
+d2
+$ every 16 (|- note 2)
+$ sometimesBy 0.1 (off "<0.25 -0.5 -0.25 0.5>" (hurry "<0.5 2 -0.5 -2 1.75>"))
+$ stack [
+    "~ ~ yan ~ "
+    # speed (0.75*2)
+    |+ note "-39"
+    # shape 0.7
+,   
+    "micro"
+    # sustain 0.3
+    |+ note 2
+    # gain 0.7
+    # speed 1
+,   
+    degradeBy 0.1
+    $ every 2 (# gain 0)
+    $ slice 8 "8"
+    $ "micro:1"
+    # sustain 0.4
+    # gain 0.7
+    # speed 4
+]
+# legato 2
+# cut "-1"
+
+d3
+$ stut 8 0.25 ("-0.25")
+$ striate' "8 <2 6>" (1/5)
+$ s "web"
+# gain 1.0
+# speed 1
+# begin (range 0 0.5 $ slow 12 $ tri)
+# delaytime (1/12)
+# delay 0.9
+|+ note 3
+
+d4
+$ every 4 (juxBy (sine*0.7) (chop "<2 4 3 1>"))
+$ chunk 4 (hurry "<0.75 -0.75 1.5 -2>")
+$ degradeBy 0.1
+$ s "{tbdo:10(3,8) thihat:4(6,9) tcp:3 thihat:4(3,5) }%4"
+|+ n "<0 4 0 2>"
+# shape 0.3
+# speed 0.5
+# room 0.0
+# gain 0.6

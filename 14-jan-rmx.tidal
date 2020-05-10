@@ -1,0 +1,46 @@
+d1
+$ snowball 4 (+) (chop 2)
+$ s "[~ yan]*2"
+|- note 7
+# lpf 400
+# lpq 0.005
+
+d2
+$ jux rev
+$ stut 3 0.5 "-0.125"
+$ iter 2
+$ chop 4
+$ s "yan*2"
+|+ note "<6 <5 [5 8]>>"
+|* speed 0.5
+# lpf (range 500 6000 $ fast 3 $ square)
+
+
+d3
+$ sometimesBy 0.2 (superimpose (hurry "<2 0.5 -2>"))
+$ jux (rev)
+$ iter 4
+$ chop 16
+$ loopAt 16
+$ s "yan:2"
+# lpf 400
+# speed 4
+# shape 0.5
+# room 0.5
+
+d4
+$ every 8 (|- note 2)
+$ sometimesBy 0.1 (off "<0.25 -0.5 -0.25 0.5>" (hurry "<0.5 2 -0.5 -2 1.5>"))
+$ s "~ tom ~ ~"
+# speed 0.5
+|+ note "0"
+
+d5
+$ juxBy 0.6 rev
+$ stut' 4 (1/8) (|* sustain 0.3)
+$ snowball 3 (*) (hurry "<2 -2>")
+-- $ jux (rev)
+$ s "{thihat!3 [thihat <tcym:6 tperc:5>]}%4"
+|+ n 16
+# lpq 0.05
+# lpf 2000

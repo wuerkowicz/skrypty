@@ -1,0 +1,55 @@
+d1
+$ rarely (off 0.5 (|* speed "<0.5 -2>"))
+$ sometimesBy 0.1 (iter 4)
+$ foldEvery [2,5] ((# s "meoe") . (# note "9"))
+$ off 0.25 (|* speed 0.5)
+$ plyWith "<8 2 4 16>" ((|+ hpf 100) . (|+ size 0.1))
+$ slow 16
+$ striate' 16 0.4
+$ s "[dr2, mstomp:7?]"
+# gain 0.7
+# room 0.1
+|+ note "[0 1]/4"
+# legato 1
+# hpq (range 0 0.4 $ fast 0.7 $ tri)
+# pan (range 0.25 0.65 $ fast 1.9 $ sine)
+# cut 3
+
+d2
+$ rarely (rev)
+$ sometimesBy 0.2 (iter 4)
+$ off 0.5 (plyWith 4 (|* speed 1.1))
+$ s "{tbdo:6@3 tcp:3@2 <tcp tperc:5>@7}%4"
+# gain 0.6
+# shape 0.3
+# speed 0.5
+|+ note 2
+# pan (range 0.15 0.85 $ fast 2.3 $ sine)
+# sustain 1
+# hpf (range 100 800 $ slow 12 $ sine)
+# hpq (range 0 0.4 $ fast 1.75 $ tri)
+
+d3
+$ rarely (off 0.25 (|* speed 2))
+$ sometimesBy 0.12 (iter 8)
+$ struct (binary 210)
+$ s "tbdkln:1"
+# gain 0.9
+
+d4
+$ sometimesBy 0.125 (rev)
+$ sometimes((|+ delaytime 0.125 ) . (|+ delay 0.75))
+$ slow 2
+$ plyWith 2 ((|+ note "[3, <7 <7 10>>]") . (|+ size 0.3))
+$ slow 2
+$ striate' 16 0.25
+$ s "~ ~ ~ tarp:1"
+|+ note 5
+|* speed 0.5
+# room 0.4
+# sustain 2
+# gain 0.6
+# cut 1
+# crush 5
+
+
