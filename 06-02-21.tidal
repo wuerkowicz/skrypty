@@ -1,0 +1,27 @@
+d1
+$ jux (0.1 <~)
+$ plyWith 8 ((|* gain 0.9) . ( hurry 0.99))
+$ striate 64
+$ sometimesBy 0.1 (0.25 <~)
+$ s "jungbass:4(3,16, 2)"
+# speed "1.5"
+
+d2
+$ iter "<2 4 8>"
+$ stut 4 0.7 "-0.25"
+$ note "0(5,8)"
+# s "jungle"
+# n ((run 4)+4)
+# shape (fast 1.5 $ saw*0.7)
+# speed "[1, 0.99]"
+# leslie 0.9
+
+d3
+$ jux (0.125 <~)
+$ plyWith 2 (|+ n 1)
+$ hurry 0.5
+$ n (run 8)
+# s "amencutup"
+# shape 0.4
+# legato 1
+# leslie 0.99
